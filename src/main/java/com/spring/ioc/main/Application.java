@@ -11,7 +11,7 @@ public class Application {
 
     public static void main(String[] args) {
         applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-        UserService userService = (UserService) applicationContext.getBean("userService");
+        UserService userService = (UserService) applicationContext.getBean(UserService.class);
         System.out.println(userService.sayHello());
 
     }
