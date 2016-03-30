@@ -7,10 +7,11 @@ import com.spring.ioc.UserService;
 
 public class Application {
 
+    private static ApplicationContext applicationContext;
+
     public static void main(String[] args) {
-        @SuppressWarnings("resource")
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-        UserService userService = (UserService) applicationContext.getBean("userService");
+        applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        UserService userService = (UserService) applicationContext.getBean(UserService.class);
         System.out.println(userService.sayHello());
 
     }
